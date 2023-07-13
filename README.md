@@ -1,3 +1,3 @@
-# Unit Tests
+# Tests
 
-Practicing unit tests using python
+Practicing tests using python
