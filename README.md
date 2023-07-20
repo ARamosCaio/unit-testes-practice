@@ -1,3 +1,5 @@
-# Unit Tests
+# Tests
 
-Practicing unit tests using python
+## Description
+
+Practicing tests using python unittest and pytest
