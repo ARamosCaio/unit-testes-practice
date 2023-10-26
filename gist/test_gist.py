@@ -47,3 +47,22 @@ def test_with_fixture(company: Company) -> None:
     print(f"Printing {company} from fixture")
 
 # Run "pytest . -v -p no:warnings -s" to show what we printed
+
+# Parametrized tests are used to run the tests multiple times with different parameters
+@pytest.mark.parametrize(
+    "company_name",
+    ["Tik Tok", "Facebook", "Instagram"],
+    ids = ["TIK TOK TEST", "FACEBOOK TEST", "INSTAGRAM TEST"],
+)
+
+def test_parametrized(company_name: str) -> None:
+    print(f"\nTest with {company_name}")
+
+# Test that asserts if its raising an exception
+def raise_covid19_exception() -> None:
+    raise ValueError("CoronaVirus Exception")
+
+def test_raise_covid19_exception_should_pass() -> None:
+    with pytest.raises(ValueError) as e:
+        raise_covid19_exception()
+    assert "CoronaVirus Exception" == str(e.value)
